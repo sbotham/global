@@ -46,7 +46,7 @@
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'STP building ${config.projectName} ...'"
 					
-					withMaven()
+					withMaven(maven: 'Maven3.5')
 					   { sh "mvn -f Maven_Template_Global/ -B install" }
 					
 					
