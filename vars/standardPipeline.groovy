@@ -45,6 +45,8 @@
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'STP building ${config.projectName} ...'"
 					
+					sh 'mvn -f ${config.projectName}/ -B install'
+					
 					sendNotifications("Build is done", "")
 					
 
@@ -70,6 +72,10 @@
          */
                 
             } catch (err) {
+				
+				sendNotifications("Build failed", "")
+				
+				
                 currentBuild.result = 'FAILED'
                 throw err
             }
