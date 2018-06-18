@@ -15,6 +15,10 @@
             deleteDir()
 
             try {
+				
+				stage ('Init') {
+					env
+				}
             
                 stage ('Clone') {
                     sh "echo 'STP stevesVar=${config.stevesVar}'"
@@ -23,8 +27,8 @@
                 }
                 
                 stage ('Build') {
-                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                    sh "echo 'building ${config.projectName} ...'"
+                    echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                    sh "echo 'STP building ${config.projectName} ...'"
                 }
             
          /*
