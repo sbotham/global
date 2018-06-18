@@ -26,7 +26,7 @@
 					sh "env"
 					
 					script {
-						message="The project ${env.JOB_NAME} was built on ${env.B_SYSTEM_NAME} project=${project.name}"
+						message="The project ${env.JOB_NAME} was built on ${env.B_SYSTEM_NAME} project=${config.projectName}"
 					}
 //					echo 'project.name=${project.name}'
 					echo 'message=${message}'
