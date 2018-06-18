@@ -17,8 +17,8 @@
             try {
             
                 stage ('Clone') {
-                    sh "echo 'stevesVar=${config.stevesVar}'"
-                    sh "echo '${env.BUILD_ID}'"
+                    sh "echo 'STP stevesVar=${config.stevesVar}'"
+                    sh "echo 'STP env.BUILD_ID=${env.BUILD_ID}'"
                     checkout scm
                 }
                 
