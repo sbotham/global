@@ -21,8 +21,8 @@
 				}
 				
 				stage ('Init') {
-					echo "************************"
-					echo "********* INIT *********"
+					log("Init", "Starts")
+
 					sh "env"
 					
 					script {
@@ -30,7 +30,8 @@
 					}
 //					echo 'project.name=${project.name}'
 					echo 'message=${message}'
-					echo "************************"
+					
+					log("Init", "Ends")
 
 				}
             
@@ -85,7 +86,21 @@
 	  
 			recipientProviders: [[$class: 'DevelopersRecipientProvider']]
 		)
+		
+		
+
 		  
 		 		  
 		  
 }
+
+
+
+def log(func, message) {
+	echo "**************************************"
+	echo "********* ${func} ${message} *********"
+	echo "**************************************"
+}
+
+
+
