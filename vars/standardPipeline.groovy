@@ -42,6 +42,7 @@
                 }
                 
                 stage ('Build') {
+					log("Build", "Starts")
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'STP building ${config.projectName} ...'"
 					
@@ -49,7 +50,7 @@
 					
 					sendNotifications("Build is done", "")
 					
-
+					log("Build", "Ends")
                 }
             
          /*
