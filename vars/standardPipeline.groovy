@@ -47,7 +47,7 @@
                     sh "echo 'STP building ${config.projectName} ...'"
 					
 					withMaven(maven: 'Maven3.5')
-					   { sh "mvn -f Maven_Template_Global/ -B install" }
+					   { sh "mvn -B install" }
 					
 					
 					sendNotifications("Build is done", "")
