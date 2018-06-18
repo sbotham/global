@@ -24,6 +24,12 @@
 					echo "************************"
 					echo "********* INIT *********"
 					sh "env"
+					
+					script {
+						message="The project ${env.JOB_NAME} was built on ${env.B_SYSTEM_NAME} project=${project.name}"
+					}
+//					echo 'project.name=${project.name}'
+					echo 'message='${message}'
 					echo "************************"
 
 				}
