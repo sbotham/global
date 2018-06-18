@@ -18,10 +18,12 @@
             
                 stage ('Clone') {
                     sh "echo 'stevesVar=${config.stevesVar}'"
+                    sh "echo '${env.BUILD_ID}'"
                     checkout scm
                 }
                 
                 stage ('Build') {
+                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'building ${config.projectName} ...'"
                 }
             
