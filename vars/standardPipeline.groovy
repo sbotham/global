@@ -17,7 +17,7 @@
             try {
 				
 				stage ('Monkey') {
-					
+					sendNotifications("Monkey is done", "")
 				}
 				
 				stage ('Init') {
@@ -29,7 +29,7 @@
 						message="The project ${env.JOB_NAME} was built on ${env.B_SYSTEM_NAME} project=${project.name}"
 					}
 //					echo 'project.name=${project.name}'
-					echo 'message='${message}'
+					echo 'message=${message}'
 					echo "************************"
 
 				}
@@ -43,6 +43,8 @@
                 stage ('Build') {
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'STP building ${config.projectName} ...'"
+					
+					sendNotifications("Build is done", "")
                 }
             
          /*
@@ -69,4 +71,21 @@
                 throw err
             }
         }
-    }
+		
+ }
+		
+// Functions here
+ 
+ def sendNotifications(message, envVars) {
+		emailext (
+	  
+			subject: "$message : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'", to: '231saleln@gmail.com',
+	  
+			body: "$message : Job ${env.BUILD_URL} ${env.JOB_NAME} envVars=$envVars",
+	  
+			recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+		)
+		  
+		 		  
+		  
+}
