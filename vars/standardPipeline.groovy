@@ -16,8 +16,16 @@
 
             try {
 				
+				stage ('Monkey') {
+					
+				}
+				
 				stage ('Init') {
-					env
+					sh "echo ************************"
+					sh "echo ********* INIT *********"
+					sh "env"
+					sh "echo ************************"
+
 				}
             
                 stage ('Clone') {
