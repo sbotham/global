@@ -17,7 +17,7 @@
             try {
             
                 stage ('Clone') {
-                    sh "echo 'stevesVar=${config.stevesVar}"
+                    sh "echo 'stevesVar=${config.stevesVar}'"
                     checkout scm
                 }
                 
