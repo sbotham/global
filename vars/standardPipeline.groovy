@@ -46,7 +46,7 @@
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'STP building ${config.projectName} ...'"
 					
-					sh 'mvn -f ${config.projectName}/ -B install'
+					sh 'mvn -B install'
 					
 					sendNotifications("Build is done", "")
 					
