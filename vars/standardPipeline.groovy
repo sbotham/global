@@ -46,7 +46,9 @@
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'STP building ${config.projectName} ...'"
 					
-					sh '../mvn -f Maven_Template_Global/ -B install'
+					withMaven(
+					   sh 'mvn -f Maven_Template_Global/ -B install'
+					)
 					
 					sendNotifications("Build is done", "")
 					
