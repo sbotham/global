@@ -46,6 +46,8 @@
                     sh "echo 'STP building ${config.projectName} ...'"
 					
 					sendNotifications("Build is done", "")
+					
+
                 }
             
          /*
@@ -82,7 +84,9 @@
 	  
 			subject: "$message : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'", to: '231saleln@gmail.com',
 	  
-			body: "$message : Job ${env.BUILD_URL} ${env.JOB_NAME} envVars=$envVars",
+			body: '$message : Job ${env.BUILD_URL} ${env.JOB_NAME} envVars=$envVars ${BUILD_LOG}',
+			
+			//{BUILD_LOG, maxLines=8000, escapeHtml=true}
 	  
 			recipientProviders: [[$class: 'DevelopersRecipientProvider']]
 		)
