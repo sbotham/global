@@ -84,7 +84,7 @@
 	  
 			subject: "$message : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'", to: '231saleln@gmail.com',
 	  
-			body: '$message : Job ${env.BUILD_URL} ${env.JOB_NAME} envVars=$envVars ${BUILD_LOG}',
+			body: '$message : Job ${env.BUILD_URL} ${env.JOB_NAME} envVars=$envVars ${BUILD_LOG, maxLines=8000}',
 			
 			//{BUILD_LOG, maxLines=8000, escapeHtml=true}
 	  
