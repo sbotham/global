@@ -45,9 +45,12 @@
 					log("Build", "Starts")
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     sh "echo 'STP building ${config.projectName} ...'"
+                    sh 'pwd'
 					
 					withMaven(maven: 'Maven3.5')
-					   { sh "mvn -B install" }
+					   { 
+					     sh "mvn -B install" 
+					   }
 					
 					
 					sendNotifications("Build is done", "")
