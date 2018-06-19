@@ -44,12 +44,15 @@
                 stage ('Build') {
 					log("Build", "Starts")
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                    sh "echo 'STP building ${config.projectName} ...'"
+                    
+                    sh "echo 'STP building ${config.projectName} using for mvn...'"
+                    
                     sh 'pwd'
 					
 					withMaven(maven: 'Maven3.5')
 					   { 
-					     sh "mvn -f MavenTemplate-global/ -B install" 
+					     //sh "mvn -f MavenTemplate-global/ -B install" 
+					     sh "mvn -f ${config.projectName}/ -B install" 
 					   }
 					
 					
