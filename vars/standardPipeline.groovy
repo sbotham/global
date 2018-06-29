@@ -49,11 +49,10 @@
                     
                     sh 'pwd'
 					
-					withMaven(maven: 'Maven3.5')
-					   { 
+		
 					     //sh "mvn -f MavenTemplate-global/ -B install" 
 					     sh "mvn -f ${config.projectName}/ -B install" 
-					   }
+				
 					
 					
 					sendNotifications("Build is done", "")
