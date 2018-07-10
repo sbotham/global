@@ -67,7 +67,9 @@
                     
                     
                     withMaven(maven: 'Maven3.5') {
-                       sh "mvn -f ${config.projectName}/ -B install"   
+                       dir('app') {
+                          sh "mvn -f ${config.projectName}/ -B install"
+                       }   
                     }
 					
 		
