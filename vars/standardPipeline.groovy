@@ -11,11 +11,14 @@
         body()
         
         
-        tools {
-           maven 'Maven3.5'
-        }
+
 
         node {
+        
+                tools {
+           maven 'Maven3.5'
+           jdk 'JDK8'
+        }
         
             // Clean workspace before doing anything
             
