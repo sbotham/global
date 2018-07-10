@@ -9,6 +9,11 @@
         body.resolveStrategy = Closure.DELEGATE_FIRST
         body.delegate = config
         body()
+        
+        
+        tools {
+           maven 'Maven3.5'
+        }
 
         node {
         
@@ -60,7 +65,8 @@
 					
 		
 					     //sh "mvn -f MavenTemplate-global/ -B install" 
-					     sh "../mvn -f ${config.projectName}/ -B install" 
+					     
+					     sh "mvn -f ${config.projectName}/ -B install" 
 				
 					
 					
