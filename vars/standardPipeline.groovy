@@ -23,12 +23,7 @@
 
             try {
             
-                         tools {
-           maven 'Maven3.5'
-           jdk 'JDK8'
-        }
-        
-        
+
 				
 				stage ('Monkey') {
 					sendNotifications("Monkey is done", "")
