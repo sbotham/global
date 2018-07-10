@@ -64,11 +64,16 @@
                     //sh "echo 'MAVEN_HOME=${MAVEN_HOME}'"
                     
                     sh 'pwd'
+                    
+                    
+                    withMaven(maven: 'Maven3.5') {
+                       sh "mvn -f ${config.projectName}/ -B install"   
+                    }
 					
 		
 					     //sh "mvn -f MavenTemplate-global/ -B install" 
 					     
-					     sh "mvn -f ${config.projectName}/ -B install" 
+					   
 				
 					
 					
