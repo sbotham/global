@@ -1,7 +1,6 @@
  /* Update this */
  
-     @Library('github.com/cloudogu/ces-build-lib@caa96324a73cdefb795fcefb9a708885728348ed')
-    import com.cloudogu.ces.cesbuildlib.*
+
     
     
  
@@ -71,12 +70,7 @@
                     sh 'pwd'
                     
                     
-                    def mvnHome = tool 'Maven3.5'
-                    def javaHome = tool 'JDK8'
-                    Maven mvn = new Maven(this, mvnHome, javaHome)
 
-
-                          sh "mvn -f ${config.projectName}/ -B install"
 
 					
 		
