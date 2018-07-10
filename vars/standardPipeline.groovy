@@ -1,5 +1,10 @@
  /* Update this */
  
+     @Library('github.com/cloudogu/ces-build-lib@caa96324a73cdefb795fcefb9a708885728348ed')
+    import com.cloudogu.ces.cesbuildlib.*
+    
+    
+ 
  /* A global template for doing Jenkinsfile builds, so we dont have to dupe Jenkins file in 
     every project */
  
