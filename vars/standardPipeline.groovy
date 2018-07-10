@@ -71,7 +71,7 @@
                     Maven mvn = new Maven(this, mvnHome, javaHome)
 
 
-                          mvn -f ${config.projectName}/ -B install
+                          sh "mvn -f ${config.projectName}/ -B install"
 
 					
 		
