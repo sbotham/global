@@ -66,11 +66,13 @@
                     sh 'pwd'
                     
                     
-                    withMaven(maven: 'Maven3.5') {
-                       dir('app') {
-                          sh "mvn -f ${config.projectName}/ -B install"
-                       }   
-                    }
+                    def mvnHome = tool 'Maven3.5'
+                    def javaHome = tool 'JDK8'
+                    Maven mvn = new Maven(this, mvnHome, javaHome)
+
+
+                          mvn -f ${config.projectName}/ -B install
+
 					
 		
 					     //sh "mvn -f MavenTemplate-global/ -B install" 
