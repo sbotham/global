@@ -15,16 +15,20 @@
 
         node {
         
-                tools {
-           maven 'Maven3.5'
-           jdk 'JDK8'
-        }
+   
         
             // Clean workspace before doing anything
             
             deleteDir()
 
             try {
+            
+                         tools {
+           maven 'Maven3.5'
+           jdk 'JDK8'
+        }
+        
+        
 				
 				stage ('Monkey') {
 					sendNotifications("Monkey is done", "")
