@@ -41,17 +41,24 @@
                     checkout scm
                 }
                 
+                
+                
+                
+                
+                
                 stage ('Build') {
 					log("Build", "Starts")
                     echo "STP Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     
                     sh "echo 'STP building ${config.projectName} using for mvn...'"
                     
+                    sh "echo 'MAVEN_HOME=${MAVEN_HOME}'"
+                    
                     sh 'pwd'
 					
 		
 					     //sh "mvn -f MavenTemplate-global/ -B install" 
-					     sh "mvn -f ${config.projectName}/ -B install" 
+					     sh "../mvn -f ${config.projectName}/ -B install" 
 				
 					
 					
@@ -59,6 +66,12 @@
 					
 					log("Build", "Ends")
                 }
+                
+                
+                
+                
+                
+                
             
          /*
                 
