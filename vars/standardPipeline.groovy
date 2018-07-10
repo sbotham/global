@@ -11,7 +11,9 @@
         body()
 
         node {
+        
             // Clean workspace before doing anything
+            
             deleteDir()
 
             try {
@@ -52,7 +54,7 @@
                     
                     sh "echo 'STP building ${config.projectName} using for mvn...'"
                     
-                    sh "echo 'MAVEN_HOME=${MAVEN_HOME}'"
+                    //sh "echo 'MAVEN_HOME=${MAVEN_HOME}'"
                     
                     sh 'pwd'
 					
